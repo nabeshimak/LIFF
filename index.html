@@ -12,11 +12,11 @@
     <form class="w-75 mx-auto">
         <p class="mt-3">お子様の氏名</p>
         <div>
-            <input class="form-control w-100 mt-1" name="name" placeholder="" required>
+            <input class="form-control w-100 mt-1" name="student_name" placeholder="" required>
         </div>
         <p class="mt-3">現在お通いの"曜日/クラス名"</p>
         <div>
-        <select name="udetate">
+        <select class="form-control w-100 mt-1" name="class_type">
             <option value="select01">水曜/春ビギナー/午後4:00～4:50</option>
     　　　　　　　　　　　　　　　　<option value="select02">水曜/秋チャレンジャー/午後5:30～6:50</option>
     　　　　　　　　　　　　　　　　<option value="select03">木曜/春チャレンジャー/午後5:30～6:50</option>
@@ -30,20 +30,19 @@
             <option value="select11">日曜/春チャレンジャー/午前10:30～11:50</option>
             <option value="select12">日曜/秋チャレンジャー/午後1:30～2:50</option>
             <option value="select13">日曜/秋アドバンス/午後3:30～5:00</option>
-<!--             <return input="form-control w-100 mt-1" name="udetate" required> -->
 　　　　　　　　　　　　　　　　</select>
         </div>
         <p class="mt-3">欠席される日付<例:9/3(土)></p>
         <div>
-            <input class="form-control w-100 mt-1" name="fukkin" required>
+            <input class="form-control w-100 mt-1" name="date_of_absence" required>
         </div>
         <p class="mt-3">希望される振替日<例:9/7(水)></p>
         <div>
-            <input class="form-control w-100 mt-1" name="haikin" required>
+            <input class="form-control w-100 mt-1" name="transfer_date" required>
         </div>
         <p class="mt-3">(その他ご質問があれば)ご入力ください</p>
         <div>
-            <input class="form-control w-100 mt-1" name="sukuwat" required>
+            <input class="form-control w-100 mt-1" name="comments" value="">
         </div>
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
@@ -86,12 +85,12 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('input[name="name"]').val();
-                const udetate = $('input[name="udetate"]').val();
-                const fukkin  = $('input[name="fukkin"]').val();
-                const haikin  = $('input[name="haikin"]').val();
-                const sukuwat = $('input[name="sukuwat"]').val();
-                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                const student_name    = $('input[name="student_name"]').val();
+                const class_type = $('[name="class_type"] option:seledted').val();
+                const date_of_absence  = $('input[name="date_of_absence"]').val();
+                const transfer_date  = $('input[name="transfer_date"]').val();
+                const comments = $('input[name="comments"]').val();
+                const msg = `${student_name}\n${class_type}\n${date_of_absence}\n${transfer_date}\n${comments}`;
                 sendText(msg);
                 return false;
             });

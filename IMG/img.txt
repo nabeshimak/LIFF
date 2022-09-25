@@ -1,1 +1,4 @@
+QRコード画像
 
+transfer =>　振替
+supplementary　=> 補講

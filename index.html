@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-
+    <h1 id="title">振替について</h1>
     <form class="w-75 mx-auto">
         <p class="mt-3">お子様の氏名</p>
         <div>
@@ -92,12 +92,13 @@
 
         $(function () {
             $('form').submit(function () {
+                const title = $('#title').val();
                 const student_name    = $('input[name="student_name"]').val();
                 const class_type = $('[name="class_type"] option:selected').val();
                 const date_of_absence  = $('input[name="date_of_absence"]').val();
                 const transfer_date  = $('input[name="transfer_date"]').val();
                 const comments = $('input[name="comments"]').val();
-                const msg = `${student_name}\n${class_type}\n${date_of_absence}\n${transfer_date}\n${comments}`;
+                const msg = `${title}\n{student_name}\n${class_type}\n${date_of_absence}\n${transfer_date}\n${comments}`;
                 sendText(msg);
                 return false;
             });

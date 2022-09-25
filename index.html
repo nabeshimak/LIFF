@@ -92,13 +92,13 @@
 
         $(function () {
             $('form').submit(function () {
-                const title = $('#title').val();
+                const title = $('#title').text();
                 const student_name    = $('input[name="student_name"]').val();
                 const class_type = $('[name="class_type"] option:selected').val();
                 const date_of_absence  = $('input[name="date_of_absence"]').val();
                 const transfer_date  = $('input[name="transfer_date"]').val();
                 const comments = $('input[name="comments"]').val();
-                const msg = `${title}\n{student_name}\n${class_type}\n${date_of_absence}\n${transfer_date}\n${comments}`;
+                const msg = `${title}\n${student_name}\n${class_type}\n${date_of_absence}\n${transfer_date}\n${comments}`;
                 sendText(msg);
                 return false;
             });

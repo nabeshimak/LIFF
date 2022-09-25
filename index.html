@@ -54,20 +54,22 @@
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
 
-        $(document).ready(function () {
-            const liffId = "1657462599-Px4VaGRl";
-            initializeLiff();
-        })
+        
 
-        function initializeLiff() {
+        function initializeLiff(liffId) {
             liff.init({
-                liffId: '1657462599-Px4VaGRl'
+                liffId: liffId
             }).then(() => {
                 initializeApp();
             }).catch((err) => {
                 console.log('LIFF Initialization failed ', err);
             });
         }
+        
+        $(document).ready(function () {
+            const liffId = "1657462599-Px4VaGRl";
+            initializeLiff(liffId);
+        })
 
         function sendText(text) {
             liff.sendMessages([{

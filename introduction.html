@@ -13,6 +13,7 @@
     </div>
     <script>
       $(function (){
+        alert(getParam('form_type'));
         const form_type = getParam('form_type');
         if(form_type == "transfer"){
           $('#transfer_container').show();

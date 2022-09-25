@@ -55,6 +55,9 @@
     <script>
 
         $(function () {
+            if(liff.isInClient()){
+                window.location.href = 'introduction.html';
+            }
             const liffId = "1657462599-Px4VaGRl";
             initializeLiff(liffId);
         });

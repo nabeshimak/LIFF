@@ -2,38 +2,19 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>HTML5サンプル</title>
+    <title>振替PCアクセス</title>
   </head>
   <body>
-    <div id="transfer_container">
-      <img src="IMG/transfer.png">
+    <div class="transfer_wrapper">
+      <div class="title">
+        <h1>スマホ版LINEでご利用になれます。</h1>
+      </div>
+      <div class="text">
+        <p>お手数ですが、以下のQRコードをお手持ちのスマートフォンにあるLINEアプリで開いてください。</p>
+      </div>
+      <div class="qr">
+        <img src="IMG/transfer.png">
+      </div>
     </div>
-    <div id="supplementary_container">
-      <img src="IMG/supplementary.png">
-    </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script>
-      $(function (){
-        alert(getParam('form_type'));
-        const form_type = getParam('form_type');
-        if(form_type == "transfer"){
-          $('#transfer_container').show();
-          $('#supplementary_container').hide();
-        }else if(form_type == "supplementary"){
-          $('#transfer_container').hide();
-          $('#supplementary_container').show();
-        }
-      });
-      function getParam(name, url) {
-          if (!url) url = window.location.href;
-          name = name.replace(/[\[\]]/g, "\\$&");
-          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-              results = regex.exec(url);
-          if (!results) return null;
-          if (!results[2]) return '';
-          return decodeURIComponent(results[2].replace(/\+/g, " "));
-      }
-    </script>
   </body>
 </html>

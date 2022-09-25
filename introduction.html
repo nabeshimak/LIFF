@@ -12,7 +12,7 @@
       <img src="IMG/supplementary.png">
     </div>
     <script>
-      $(function (){
+      window.onload = function(){
         alert(getParam('form_type'));
         const form_type = getParam('form_type');
         if(form_type == "transfer"){
@@ -22,7 +22,7 @@
           $('#transfer_container').hide();
           $('#supplementary_container').show();
         }
-      });
+      }
       function getParam(name, url) {
           if (!url) url = window.location.href;
           name = name.replace(/[\[\]]/g, "\\$&");

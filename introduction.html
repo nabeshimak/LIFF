@@ -11,8 +11,10 @@
     <div id="supplementary_container">
       <img src="IMG/supplementary.png">
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
-      window.onload = function(){
+      $(function (){
         alert(getParam('form_type'));
         const form_type = getParam('form_type');
         if(form_type == "transfer"){
@@ -22,7 +24,7 @@
           $('#transfer_container').hide();
           $('#supplementary_container').show();
         }
-      }
+      });
       function getParam(name, url) {
           if (!url) url = window.location.href;
           name = name.replace(/[\[\]]/g, "\\$&");

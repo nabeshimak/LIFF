@@ -56,12 +56,12 @@
 
         $(document).ready(function () {
             const liffId = "1657462599-Px4VaGRl";
-            initializeLiff(liffId);
+            initializeLiff();
         })
 
-        function initializeLiff(liffId) {
+        function initializeLiff() {
             liff.init({
-                liffId: liffId
+                liffId: '1657462599-Px4VaGRl'
             }).then(() => {
                 initializeApp();
             }).catch((err) => {

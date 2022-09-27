@@ -63,7 +63,7 @@ span.line_text {
     display: block;
     position: relative;
     margin: 0 auto;
-    width: 30%;
+    width: 300px;
 }
 .inquire a {
     text-align: center;
